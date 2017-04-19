@@ -1,0 +1,24 @@
+﻿@model IEnumerable<TravelBlog.Models.Location>
+
+@{
+    ViewData["Title"] = "Travel Blog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Travel Blog</h2>
+<h4>What I Have Done and Seen</h4>
+<p>Click on a place to see what my experiences were and who I have been able to adventur with.</p>
+
+@foreach (var listLoc in Model)
+{
+    <h3>
+        <em>
+            @Html.DisplayFor(modelItem => listLoc.City),
+        </em> @Html.DisplayFor(modelItem => listLoc.Country)
+    </h3>
+    <p>@Html.ActionLink("Details", "Details", new { id = listLoc.LocationId })</p>
+    <hr />
+
+}
+
+

@@ -19,5 +19,26 @@ namespace TravelBlog.Controllers
         {
             return View(db.Locations.ToList());
         }
+
+        public IActionResult Details(int id)
+        {
+            var thisLocation = db.Locations.FirstOrDefault(locations => locations.LocationId == id);
+            return View(thisLocation);
+        }
+
+        //Get - Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        //Post - Create
+        [HttpPost]
+        public IActionResult Create(Location location)
+        {
+            db.Locations.Add(location);
+            db.SaveChanges();
+            return RedirectToRoute("Index");
+        }
     }
 }

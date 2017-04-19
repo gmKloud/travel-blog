@@ -1,0 +1,27 @@
+﻿@model IEnumerable<TravelBlog.Models.Experience>
+
+    @{
+        ViewData["Title"] = "Travel Blog";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h2>Travel Blog</h2>
+    <h4>What I Have Done and Seen</h4>
+    <p>Click on a place to see what my experiences were and who I have been able to adventur with.</p>
+
+    <ul>
+        @foreach (var listexp in Model)
+        {
+            <h3>
+                @*@Html.DisplayNameFor(modelItem => listexp.City):*@ <em>
+                    @Html.DisplayFor(modelItem => listexp.Title)
+                </em>
+            </h3>
+            <h3>
+                @*@Html.DisplayNameFor(modelItem => listexp.Country):*@ <em>
+                    @Html.DisplayFor(modelItem => listexp.Story)
+                </em>
+            </h3> |
+            <h4>@Html.ActionLink("Details", "Details", new { id = listexp.LocationId })</h4>
+        }
+    </ul>
