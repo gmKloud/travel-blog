@@ -1,7 +1,30 @@
-﻿@model TravelBlog.Models.Location
+﻿@model IEnumerable<TravelBlog.Models.Location>
 
-<h2>@Html.DisplayNameFor(model => model.City) : <em>@Html.DisplayFor(model => model.City)</em></h2>
+@{
+    ViewData["Title"] = "Travel Blog - Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-<h2>@Html.DisplayNameFor(model => model.Country) : <em>@Html.DisplayFor(model => model.Country)</em></h2>
+<h2>@Html.DisplayNameFor(model => model.City) : @*<em>@Html.DisplayFor(model => model.City)</em></h2>*@
+
+<h2>@Html.DisplayNameFor(model => model.Country) : @*<em>@Html.DisplayFor(model => model.Country)</em></h2>*@
+
+    <h3>Adventures : </h3> 
+
+    <hr />
+    
+    @foreach (var listexp in Model)
+    {
+        <h2>
+            @Html.DisplayFor(modelItem => listexp.City)
+        </h2>
+        <h2>
+            @Html.DisplayFor(modelItem => listexp.Experience.Title)
+        </h2>
+        <h2>
+            @Html.DisplayFor(modelItem => listexp.Experience.Story)
+        </h2>
+
+    }
 
 <h4>@Html.ActionLink("Home", "Index")</h4>

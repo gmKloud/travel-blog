@@ -17,6 +17,7 @@ namespace TravelBlog.Controllers
         public IActionResult Index()
         {
             return View(db.Locations.ToList());
+            //return View(db.Locations.Include(locations => locations.Experience).ToList());
         }
 
         public IActionResult Details(int id)

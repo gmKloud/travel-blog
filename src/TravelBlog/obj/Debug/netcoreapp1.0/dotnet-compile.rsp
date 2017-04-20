@@ -200,8 +200,9 @@ C:\Users\epicodus\Documents\Visual Studio 2015\Projects\TravelBlog\src\TravelBlo
 C:\Users\epicodus\Documents\Visual Studio 2015\Projects\TravelBlog\src\TravelBlog\Startup.cs
 C:\Users\epicodus\Documents\Visual Studio 2015\Projects\TravelBlog\src\TravelBlog\Controllers\ExperiencesController.cs
 C:\Users\epicodus\Documents\Visual Studio 2015\Projects\TravelBlog\src\TravelBlog\Controllers\LocationsController.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\TravelBlog\src\TravelBlog\Controllers\PeoplesController.cs
+C:\Users\epicodus\Documents\Visual Studio 2015\Projects\TravelBlog\src\TravelBlog\Controllers\PeopleController.cs
 C:\Users\epicodus\Documents\Visual Studio 2015\Projects\TravelBlog\src\TravelBlog\Models\Experience.cs
 C:\Users\epicodus\Documents\Visual Studio 2015\Projects\TravelBlog\src\TravelBlog\Models\Location.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\TravelBlog\src\TravelBlog\Models\People.cs
+C:\Users\epicodus\Documents\Visual Studio 2015\Projects\TravelBlog\src\TravelBlog\Models\Location2Person.cs
+C:\Users\epicodus\Documents\Visual Studio 2015\Projects\TravelBlog\src\TravelBlog\Models\Person.cs
 C:\Users\epicodus\Documents\Visual Studio 2015\Projects\TravelBlog\src\TravelBlog\Models\TravelBlogContext.cs

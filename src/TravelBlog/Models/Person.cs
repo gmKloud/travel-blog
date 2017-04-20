@@ -7,11 +7,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TravelBlog.Models
 {
-    [Table("Peoples")]
-    public class People
+    [Table("People")]
+    public class Person
     {
         [Key]
-        public int PeopleId { get; set; }
+        public int PersonId { get; set; }
         public string Name { get; set; }
         public string Character { get; set; }
     }

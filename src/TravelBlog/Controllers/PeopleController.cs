@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TravelBlog.Controllers
 {
-    public class PeoplesController : Controller
+    public class PeopleController : Controller
     {
         // GET: /<controller>/
         public IActionResult Index()
