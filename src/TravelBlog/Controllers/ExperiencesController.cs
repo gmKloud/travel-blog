@@ -21,7 +21,9 @@ namespace TravelBlog.Controllers
         public IActionResult Index()
         {
             return View(db.Experiences
-                .Include(experiences => experiences.Location).ToList());
+                .Include(experiences => experiences.Location)
+                .Include(experiences => experiences.Person)
+                .ToList());
         }
 
         // Get: Details

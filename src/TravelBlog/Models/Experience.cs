@@ -24,6 +24,8 @@ namespace TravelBlog.Models
         //Many experiences to one location
         public int LocationId { get; set; }
         public virtual Location Location { get; set; }
+        public virtual Person Person { get; set; }
+
         //public virtual ICollection<Person> People { get; set; }
     }
 }

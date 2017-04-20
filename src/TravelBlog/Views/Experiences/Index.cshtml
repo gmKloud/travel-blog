@@ -10,8 +10,6 @@
 <p>Click on a story to read about my experience.</p>
 
 <p>@Html.ActionLink("Post a New Experience", "Create")</p>
-<p>Html.DisplayNameFor(model => model.Location.City)</p>
-
 
 @foreach (var listexp in Model)
 {
@@ -19,4 +17,9 @@
 
             <p> @Html.ActionLink("Story", "Details", new { id = listexp.ExperienceId }) | @Html.ActionLink("Edit", "Update", new { id = listexp.ExperienceId }) | @Html.ActionLink("Delete", "Delete", new { id = listexp.ExperienceId }) </p>
 
+       @foreach (var listper in Model)
+       {
+        <h4>in <em>@Html.DisplayFor(modelItem => listexp.Person.Name)</em></h4>
+
+       }
 }
