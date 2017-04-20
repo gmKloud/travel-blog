@@ -1,5 +1,5 @@
-﻿@model IEnumerable<TravelBlog.Models.Experience>
-@*@model TravelBlog.Models.Experience*@
+﻿@*@model IEnumerable<TravelBlog.Models.Experience>*@
+@model TravelBlog.Models.Experience
 
 
 @{
@@ -7,15 +7,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Html.DisplayNameFor(model => model.ExperienceId) : @*<em>@Html.DisplayFor(model => model.Title)</em>*@</h2>
-@*<h2><em>@Html.DisplayFor(model => model.Story)</em></h2>*@
+<h2>@Html.DisplayNameFor(model => model.ExperienceId) : <em>@Html.DisplayFor(model => model.Title)</em></h2>
+<h2><em>@Html.DisplayFor(model => model.Story)</em></h2>
+<h2>@Html.DisplayFor(model => model.Location)</h2>
 
 
     <hr />
 
-@foreach (var listperson in Model)
+@foreach (var listperson in Model.People)
     {
-    <h3>@Html.DisplayFor(modelItem => listperson.Person.Name)</h3>
+    <h3>@Html.DisplayFor(modelItem => listperson.Name)</h3>
 }
 
 

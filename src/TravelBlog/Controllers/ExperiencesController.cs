@@ -20,7 +20,8 @@ namespace TravelBlog.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View(db.Experiences.Include(experiences => experiences.Location).ToList());
+            return View(db.Experiences
+                .Include(experiences => experiences.Location).ToList());
         }
 
         // Get: Details

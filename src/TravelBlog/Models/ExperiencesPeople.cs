@@ -10,5 +10,7 @@ namespace TravelBlog.Models
         public int Id { get; set; }
         public int ExperienceId { get; set; }
         public int PersonId { get; set; }
+        public virtual Person People { get; set; }
+        public virtual Experience Experience { get; set; }
     }
 }

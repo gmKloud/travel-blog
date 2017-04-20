@@ -10,11 +10,16 @@ namespace TravelBlog.Models
     [Table("People")]
     public class Person
     {
+        public Person()
+        {
+            this.Experiences = new HashSet<Experience>();
+        }
+
         [Key]
         public int PersonId { get; set; }
         public string Name { get; set; }
         //public string Character { get; set; }
         public int ExperienceId { get; set; }
-        public virtual Experience Experience { get; set; }
+        public virtual ICollection<Experience> Experiences { get; set; }
     }
 }
