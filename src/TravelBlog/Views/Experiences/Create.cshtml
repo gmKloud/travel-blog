@@ -1,0 +1,17 @@
+﻿
+@model TravelBlog.Models.Experience
+
+<h3>Enter an Experience</h3>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Title)
+    @Html.EditorFor(model => model.Title)
+
+    @Html.LabelFor(model => model.Story)
+    @Html.EditorFor(model => model.Story)
+    @Html.DropDownList("LocationId")
+    <input type="submit" value="Add A New Experience" />
+}
+
+<p>@Html.ActionLink("Home", "Index")</p>

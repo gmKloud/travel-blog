@@ -1,0 +1,26 @@
+﻿
+@model TravelBlog.Models.Experience
+
+<h2>Edit Location</h2>
+<hr />
+
+<h3>Edit : </h3>
+<h3>@Html.DisplayNameFor(model => model.Title) : @Html.DisplayFor(model => model.Title)</h3>
+<h3>@Html.DisplayNameFor(model => model.Story) : @Html.DisplayFor(model => model.Story)</h3>
+
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.ExperienceId)
+
+    @Html.LabelFor(model => model.Title)
+    @Html.EditorFor(model => model.Title)
+
+    @Html.LabelFor(model => model.Story)
+    @Html.EditorFor(model => model.Story)
+    @Html.DropDownList("LocationId")
+
+    <input type="submit" value="Save" />
+}
+
+<p>@Html.ActionLink("Home", "Index")</p>

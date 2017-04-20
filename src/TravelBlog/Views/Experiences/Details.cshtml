@@ -1,0 +1,22 @@
+﻿@model IEnumerable<TravelBlog.Models.Experience>
+@*@model TravelBlog.Models.Experience*@
+
+
+@{
+    ViewData["Title"] = "Travel Blog - Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Html.DisplayNameFor(model => model.ExperienceId) : @*<em>@Html.DisplayFor(model => model.Title)</em>*@</h2>
+@*<h2><em>@Html.DisplayFor(model => model.Story)</em></h2>*@
+
+
+    <hr />
+
+@foreach (var listperson in Model)
+    {
+    <h3>@Html.DisplayFor(modelItem => listperson.Person.Name)</h3>
+}
+
+
+<h4>@Html.ActionLink("Home", "Index")</h4>

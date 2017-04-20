@@ -1,27 +1,22 @@
 ﻿@model IEnumerable<TravelBlog.Models.Experience>
 
-    @{
-        ViewData["Title"] = "Travel Blog";
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    }
+@{
+    ViewData["Title"] = "Travel Blog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-    <h2>Travel Blog</h2>
-    <h4>What I Have Done and Seen</h4>
-    <p>Click on a place to see what my experiences were and who I have been able to adventur with.</p>
+<h2>Travel Blog</h2>
+<h4>What I Have Done and Seen</h4>
+<p>Click on a story to read about my experience.</p>
 
-    <ul>
-        @foreach (var listexp in Model)
-        {
-            <h3>
-                @*@Html.DisplayNameFor(modelItem => listexp.City):*@ <em>
-                    @Html.DisplayFor(modelItem => listexp.Title)
-                </em>
-            </h3>
-            <h3>
-                @*@Html.DisplayNameFor(modelItem => listexp.Country):*@ <em>
-                    @Html.DisplayFor(modelItem => listexp.Story)
-                </em>
-            </h3> |
-            <h4>@Html.ActionLink("Details", "Details", new { id = listexp.LocationId })</h4>
-        }
-    </ul>
+<p>@Html.ActionLink("Post a New Experience", "Create")</p>
+<p>Html.DisplayNameFor(model => model.Location.City)</p>
+
+
+@foreach (var listexp in Model)
+{
+    <h3>@Html.DisplayFor(modelItem => listexp.Title)</h3><h4>in <em>@Html.DisplayFor(modelItem => listexp.Location.City)</em></h4>
+
+            <p> @Html.ActionLink("Story", "Details", new { id = listexp.ExperienceId }) | @Html.ActionLink("Edit", "Update", new { id = listexp.ExperienceId }) | @Html.ActionLink("Delete", "Delete", new { id = listexp.ExperienceId }) </p>
+
+}
