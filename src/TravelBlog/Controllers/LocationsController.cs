@@ -4,8 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TravelBlog.Models;
-
-// For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+using Microsoft.EntityFrameworkCore;
 
 namespace TravelBlog.Controllers
 {
@@ -38,7 +37,40 @@ namespace TravelBlog.Controllers
         {
             db.Locations.Add(location);
             db.SaveChanges();
-            return RedirectToRoute("Index");
+            return RedirectToAction("Index");
+        }
+
+        //Get - Update
+        public IActionResult Update(int id)
+        {
+            var thisLocation = db.Locations.FirstOrDefault(locations => locations.LocationId == id);
+            return View(thisLocation);
+        }
+
+        //POST - Update
+        [HttpPost]
+        public IActionResult Update(Location location)
+        {
+            db.Entry(location).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        //Get - Delete
+        public IActionResult Delete(int id)
+        {
+            var thisLoc = db.Locations.FirstOrDefault(locations => locations.LocationId == id);
+            return View(thisLoc);
+        }
+
+        //POST - Delete
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            var thisLoc = db.Locations.FirstOrDefault(locations => locations.LocationId == id);
+            db.Locations.Remove(thisLoc);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

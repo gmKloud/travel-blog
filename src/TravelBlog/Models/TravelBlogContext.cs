@@ -28,5 +28,10 @@ namespace TravelBlog.Models
         {
             base.OnModelCreating(builder);
         }
+
+        internal object Entity(Location location)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

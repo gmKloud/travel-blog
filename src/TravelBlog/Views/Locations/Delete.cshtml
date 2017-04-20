@@ -1,0 +1,10 @@
+﻿@model TravelBlog.Models.Location
+
+<h2>Delete : <em>@Html.DisplayFor(model => model.City), @Html.DisplayFor(model => model.Country)<em></h2>
+
+@using (Html.BeginForm())
+{
+    <input type="Submit" value="Delete" />
+}
+
+<p>@Html.ActionLink("Map", "Index")</p>
